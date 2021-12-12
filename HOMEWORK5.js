@@ -1,12 +1,12 @@
 // *************** Task 1 ***************
 const mentor = {
-    course: 'JS fundamental',
-    duration: 3,
-    direction: 'web-development'
+  course: "JS fundamental",
+  duration: 3,
+  direction: "web-development",
 };
 
 function propsCount(currentObject) {
-    return Object.keys(currentObject);
+  return Object.keys(currentObject);
 }
 
 let result = propsCount(mentor);
@@ -14,22 +14,24 @@ console.log(result.length);
 
 
 
+
 // *************** Task 2 ***************
 
 const randObj = {
-    number: 42,
-    value: 'rand',
-    process: 'work',
-    bool: 'true,',
-    number2: 123
-}
+  number: 42,
+  value: "rand",
+  process: "work",
+  bool: "true,",
+  number2: 123,
+};
 
 function showProps(obj) {
-    console.log(Object.values(obj));
-    console.log(Object.keys(obj));
+  console.log(Object.values(obj));
+  console.log(Object.keys(obj));
 }
 
 showProps(randObj);
+
 
 
 
@@ -67,6 +69,7 @@ console.log("Current course: " + stud1.showCourse());
 
 
 
+
 // *************** Task 4 ***************
 
 const persSalary = {};
@@ -85,8 +88,13 @@ class Worker {
   }
 
   showSalaryWithExperience() {
-    console.log(`${this.fullName} salary: ${this.dayRate * this.workingDays * this.#expirience}`);
-    persSalary[this.fullName] = this.dayRate * this.workingDays * this.#expirience;
+    console.log(
+      `${this.fullName} salary: ${
+        this.dayRate * this.workingDays * this.#expirience
+      }`
+    );
+    persSalary[this.fullName] =
+      this.dayRate * this.workingDays * this.#expirience;
     return this.dayRate * this.workingDays * this.#expirience;
   }
 
@@ -133,10 +141,15 @@ console.log("New experience: " + worker3.showExp());
 worker3.showSalaryWithExperience();
 console.log("------------------------------------------");
 
-console.log('Sorted by salary:', Object.entries(persSalary).sort(function(a, b) {
-  return a[0] - b[0]}));
+console.log(
+  "Sorted by salary:",
+  Object.entries(persSalary).sort(function (a, b) {
+    return a[0] - b[0];
+  })
+);
 
-  
+
+
 
 // *************** Task 5 ***************
 
@@ -151,7 +164,7 @@ class GeometricFigure {
 
 class Triangle extends GeometricFigure {
   constructor(basis, height) {
-    super (basis, height);
+    super(basis, height);
     this.basis = basis;
     this.height = height;
   }
@@ -162,7 +175,7 @@ class Triangle extends GeometricFigure {
 
 class Square extends GeometricFigure {
   constructor(sideSquare) {
-    super (sideSquare);
+    super(sideSquare);
     this.sideSquare = sideSquare;
   }
   getArea() {
@@ -180,17 +193,17 @@ class Circle extends GeometricFigure {
   }
 }
 
-
 const figures = [new Triangle(4, 5), new Square(7), new Circle(5)];
 
 function handleFigures(figures) {
   let arrArea = [];
-  figures.forEach(element => {
-  console.log(`Geometric figure: ${element.toString()} - area: ${element.getArea()}`); 
-  arrArea.push(element.getArea());
+  figures.forEach((element) => {
+    console.log(
+      `Geometric figure: ${element.toString()} - area: ${element.getArea()}`
+    );
+    arrArea.push(element.getArea());
   });
-  console.log('Total area: ' +  arrArea.reduce((sum, elem) => sum + elem)); 
+  console.log("Total area: " + arrArea.reduce((sum, elem) => sum + elem));
 }
 
 handleFigures(figures);
-
