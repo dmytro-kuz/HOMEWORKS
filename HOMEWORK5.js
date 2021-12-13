@@ -144,7 +144,7 @@ console.log("------------------------------------------");
 console.log(
   "Sorted by salary:",
   Object.entries(persSalary).sort(function (a, b) {
-    return a[0] - b[0];
+    return a[1] - b[1];
   })
 );
 
